@@ -2,21 +2,15 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { DUMMY_NEWS } from "@/dummy-news";
+import { getAllNews } from "@/lib/new";
+import NewsList from "@/components/news-list";
 
 export default function NewsPage() {
+  const allNews = getAllNews();
   return (
     <>
       <h1>News Page</h1>
-      <ul className="news-list">
-        {DUMMY_NEWS.map((newsItem) => (
-          <li key={newsItem.id}>
-            <Link href={`/news/${newsItem.slug}`}>
-              <img src={`/images/news/${newsItem.image}`} />
-              <span>{newsItem.title}</span>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <NewsList news={allNews} />
     </>
   );
 }
