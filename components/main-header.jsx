@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 import logo from "@/assets/logo.jpg";
-import { usePathname } from "next/navigation";
 import NavLink from "./nav-link";
 import Link from "next/link";
 
